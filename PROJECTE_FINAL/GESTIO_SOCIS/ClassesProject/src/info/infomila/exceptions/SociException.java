@@ -1,0 +1,28 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package info.infomila.exceptions;
+
+/**
+ *
+ * @author alber
+ */
+public class SociException extends RuntimeException {
+
+    public SociException() {
+    }
+
+    public SociException(String message) {
+        super(message);
+    }
+
+    public SociException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    
+    
+}
+

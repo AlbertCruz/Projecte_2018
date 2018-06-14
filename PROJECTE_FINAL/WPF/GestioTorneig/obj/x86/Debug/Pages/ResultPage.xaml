@@ -1,0 +1,101 @@
+﻿<Page
+    x:Class="GestioTorneig.Pages.ResultPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GestioTorneig.Pages"   
+    xmlns:localControls="using:GestioTorneig.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="lvPartidesHeaderTemplate">
+            <Grid Background="LightGray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Soci A" Grid.Column="0" FontWeight="Bold" Margin="10,10"></TextBlock>
+                <TextBlock Text="Caramboles A" Grid.Column="1" FontWeight="Bold" Margin="10,10"></TextBlock>
+                <TextBlock Text="Soci B" Grid.Column="2" FontWeight="Bold" Margin="10,10"></TextBlock>
+                <TextBlock Text="Caramboles B" Grid.Column="3" FontWeight="Bold" Margin="10,10"></TextBlock>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="lvGrupsItemTemplate">
+            <!--<localControls:PartidaItem Partida="{Binding this}"></localControls:PartidaItem>-->
+        </DataTemplate>
+
+        <DataTemplate x:Key="lvGrupsTemplateItem">
+            <!--<localControls:GrupItem Grup="{Binding this}"></localControls:GrupItem>-->
+        </DataTemplate>
+        <DataTemplate x:Key="lvGrupsTemplateHeader">
+            <Grid Background="LightGray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="6*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Caram. Victoria" Grid.Column="0" FontWeight="Bold" Margin="10,10"></TextBlock>
+                <TextBlock Text="Limit Entrades" Grid.Column="1" FontWeight="Bold" Margin="10,10"></TextBlock>
+                <TextBlock Text="Descripció" Grid.Column="2" FontWeight="Bold" Margin="10,10"></TextBlock>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--<ScrollViewer VerticalScrollBarVisibility="Visible" Height="300" >-->
+            <localControls:Control_ListViewDBCreator x:ConnectionId='1' x:Name="lvGrups" Background="AliceBlue"  Grid.Column="0" Grid.Row="0"
+                                                        Height="500" HorizontalAlignment="Center" Margin="0,20,0,0" />
+        <!--</ScrollViewer>-->
+
+        <!--<ScrollViewer VerticalScrollBarVisibility="Visible" Height="300" >-->
+
+            <localControls:Control_ListViewDBCreator x:ConnectionId='2' x:Name="lvPartides" Background="AliceBlue"  Grid.Column="0" Grid.Row="1" 
+                                                        Height="500" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+
+
+        <!--</ScrollViewer>-->
+
+        <Grid Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBox x:ConnectionId='3' x:Name="tbCarambolesA" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Header="Caramboles Soci A"                           ></TextBox>
+            <TextBox x:ConnectionId='4' x:Name="tbCarambolesB" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Header="Caramboles Soci B"                          ></TextBox>
+            <TextBox x:ConnectionId='5' x:Name="tbEntradesA" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" Header="Núm. Entrades A"                          ></TextBox>
+            <TextBox x:ConnectionId='6' x:Name="tbEntradesB" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Stretch" Header="Núm. Entrades B"                          ></TextBox>
+            <TextBox x:ConnectionId='7' x:Name="tbEntradesTotals" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Stretch" Header="Número entrades totals"                          ></TextBox>
+            <ComboBox x:ConnectionId='8' x:Name="cbEstatPartida" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Stretch" Header="Estat partida"                                             >
+                <ComboBoxItem Content="PENDENT"></ComboBoxItem>
+                <ComboBoxItem Content="JUGAT"></ComboBoxItem>
+            </ComboBox>
+            <ComboBox x:ConnectionId='9' x:Name="cbModeVictoria" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Stretch" Header="Mode Victoria"                                             >
+                <ComboBoxItem Content="PER CARAMBOLES"></ComboBoxItem>
+                <ComboBoxItem Content="ENTRADES ASSOLIDES"></ComboBoxItem>
+                <ComboBoxItem Content="ABANDONAMENT"></ComboBoxItem>
+            </ComboBox>
+            <ComboBox x:ConnectionId='10' x:Name="cbGuanyador" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Stretch" Header="Guanyador"                                             ></ComboBox>
+            <Button x:ConnectionId='11' x:Name="btSavePartida" Content="Guardar" Grid.Row="8" VerticalAlignment="Top" HorizontalAlignment="Right"                             Margin="0,20"></Button>
+        </Grid>
+    </Grid>
+</Page>
+

@@ -1,0 +1,1 @@
+Aquest es un exemple del tipic README... Per cert, s'ha de configurar l'arxiu propietatsUnitatPersistencia.txt (propietat up)

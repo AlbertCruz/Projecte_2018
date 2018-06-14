@@ -1,0 +1,1 @@
+info.infomila.model.EstadisticaModalitatException

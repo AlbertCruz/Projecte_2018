@@ -1,0 +1,69 @@
+﻿<Page
+    x:Class="GestioTorneig.Pages.ClassificacioPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GestioTorneig.Pages"
+    xmlns:localControls="using:GestioTorneig.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="lvGrupsTemplateItem">
+            <!--<local:GrupItem Grup="{Binding this}"></local:GrupItem>-->
+        </DataTemplate>
+        <DataTemplate x:Key="lvGrupsTemplateHeader">
+            <Grid Background="LightGray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="6*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Caramboles Victoria" Grid.Column="0" FontWeight="Bold" Margin="10,10"></TextBlock>
+                <TextBlock Text="Limit Entrades" Grid.Column="1" FontWeight="Bold" Margin="10,10"></TextBlock>
+                <TextBlock Text="Descripcio" Grid.Column="2" FontWeight="Bold" Margin="10,10"></TextBlock>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="lvClassificacionsTemplateItem">
+            <!--<local:ClassificacioItem Classificacio="{Binding this}"></local:ClassificacioItem>-->
+        </DataTemplate>
+        <DataTemplate x:Key="lvClassificacionsTemplateHeader">
+            <Grid Background="LightGray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Posició" Grid.Column="0" FontWeight="Bold" Margin="10,10"></TextBlock>
+                <TextBlock Text="Nom del jugador" Grid.Column="1" FontWeight="Bold" Margin="10,10"></TextBlock>
+                <TextBlock Text="P. jugades" Grid.Column="2" FontWeight="Bold" Margin="10,10"></TextBlock>
+                <TextBlock Text="P. guanyades" Grid.Column="3" FontWeight="Bold" Margin="10,10"></TextBlock>
+                <TextBlock Text="P. perdudes" Grid.Column="4" FontWeight="Bold" Margin="10,10"></TextBlock>
+                <TextBlock Text="Coeficient" Grid.Column="5" FontWeight="Bold" Margin="10,10"></TextBlock>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer VerticalScrollBarVisibility="Visible" Height="300"   Grid.Row="0">
+            <localControls:Control_ListViewDBCreator x:Name="LvGrup" Background="AliceBlue"        
+                    Height="150" HorizontalAlignment="Center" Margin="-200,0,0,0"/>
+        </ScrollViewer>
+
+
+        <ScrollViewer VerticalScrollBarVisibility="Visible" Height="300"   Grid.Row="1" >
+            <localControls:Control_ListViewDBCreator  Background="AliceBlue"  x:Name="lvClassificacions"      
+                    Height="150" HorizontalAlignment="Center" Margin="-200,0,0,0"/>
+        </ScrollViewer>
+
+   
+    </Grid>
+</Page>

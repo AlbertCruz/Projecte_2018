@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference android:title="IP Servidor"
+        android:key="ip"
+        android:defaultValue="0.0.0.0"
+        android:summary="Indica la ip del servidor">
+    </EditTextPreference>
+    <EditTextPreference android:title="Port"
+        android:key="port"
+        android:defaultValue="1234"
+        android:summary="Indica el port">
+    </EditTextPreference >
+
+</PreferenceScreen>

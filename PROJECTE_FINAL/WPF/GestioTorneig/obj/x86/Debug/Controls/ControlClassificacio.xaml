@@ -1,0 +1,38 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:localControls="using:GestioTorneig.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Class="GestioTorneig.Controls.ControlClassificacio"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="1500">
+
+
+<Grid Background="AliceBlue" Margin="35,-150,5,790" RenderTransformOrigin="0.5,0.955">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="397*"/>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Padding="20" Margin="0,0,0,115" HorizontalAlignment="Right" Width="1870"  >
+            <TextBlock Text="Grup classificat" VerticalAlignment="Top" FontSize="35" FontWeight="Bold" Margin="0,0,0,0"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Num Grupo: " VerticalAlignment="Top" FontSize="22" FontWeight="Bold" Margin="10,0,0,0"/>
+                <TextBlock x:ConnectionId='2' x:Name="tbNumGrup" Text="{Binding classificacio.grup.id}" VerticalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                <TextBlock Text="Nom Grup: " VerticalAlignment="top" FontWeight="Bold" FontSize="22" Margin="20,0,0,0"/>
+                <TextBlock x:ConnectionId='3' x:Name="tbNomGrup" Text="{Binding classificacio.grup.desc}" VerticalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+            </StackPanel>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Height="183"  
+                          BorderBrush="Black" BorderThickness="3" >
+                  <localControls:Control_ListViewDBCreator x:ConnectionId='1' x:Name="lvSInscrits" Background="AliceBlue" />
+        
+            </ScrollViewer>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>
+

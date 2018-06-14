@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="UP-MySQL" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <class>info.infomila.appbolos.models.Soci</class>
+    <class>info.infomila.appbolos.models.EstadisticaModalitat</class>
+    <class>info.infomila.appbolos.models.Modalitat</class>
+    <class>info.infomila.appbolos.models.Grup</class>
+    <class>info.infomila.appbolos.models.Torneig</class>
+    <class>info.infomila.appbolos.models.Inscrit</class>
+    <class>info.infomila.appbolos.models.Partida</class>
+    <properties>        
+        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://92.222.27.83:3306/m2_acruz"/>
+        <property name="javax.persistence.jdbc.user" value="m2-acruz"/>
+        <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+        <property name="javax.persistence.jdbc.password" value="47111916G"/>
+        <property name="hibernate.hbm2ddl.auto" value="validate"/>
+        <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
+        <property name="hibernate.show_sql" value="true"/>
+        <property name="hibernate.format_sql" value="true"/>
+        <property name="hibernate.enable_lazy_load_no_trans" value="true"></property>
+    </properties>
+  </persistence-unit>
+</persistence>
